@@ -1,0 +1,15 @@
+{
+  "name": "Paragonel scraper",
+  "version": "1.0",
+  "description": "MLS scraping",
+  "permissions": ["declarativeContent", "storage", "activeTab"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "options_page": "options.html"
+}
