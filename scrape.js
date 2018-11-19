@@ -37,3 +37,27 @@ for(let i=0; i < window.divs.length-1; i++) {
     }
 }
 
+var data = [
+    ["Listing ID"],
+    ["Address #1"],
+    ["Address #2"],
+    ["Address #3"],
+    ["Address #4"],
+    ["Listing Price"],
+    ["Gross Taxes"],
+    ["Maintenance Fee"],
+    ["Number of Bedrooms"],
+    ["Number of Bathrooms"],
+    ["Total SQFT"],
+    ["Listing Description"]
+];
+
+
+
+/* create worksheet */
+var ws = XLSX.utils.json_to_sheet(data, { header: ['Name', 'Location', 'Path'] });
+
+/* create workbook and export */
+var wb = XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(wb, ws, 'Bookmarks');
+XLSX.writeFile(wb, "bookmarks.xlsx");
